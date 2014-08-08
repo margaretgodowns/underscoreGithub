@@ -2,14 +2,65 @@
 <html>
   <head>
     <title>Underscore Project</title>
+    <script type = "text/css" src = "styleSheets/styles.css"></script>
+
+    <script type=template/html id="profileTmplt">
+      <%_.each(dataProfile, function(element, index, list) { %>
+      <img src="<%= element.avatar_url %>">
+      <h1><%= element.name %></h1>
+      <h2><%= element.login %></h2>
+      <hr>
+      <p><%= element.location %></p>
+      <p><%= element.email %></p>
+      <p><%= element.created_at %></p>
+      <hr>
+      <div>
+      <p><%= element.followers %></p>
+      <p><%= element.following %></p>
+      </div>
+      <hr>
+      <h2><%= element.organizations_url %></h2>
+    <% }); %>
+    </script>
+
+    <script type=template/html id="repoTmplt">
+      <%_.each(dataRepo, function(element, index, list) { %>
+        <a href="<%= element.html_url"><h1 src="<%= element.name %>"</h1></a>
+        <p><%= element.updated_at %></p>
+    <$ }); %>
+    </script>
+
+    <script type=template/html id="activityTmplt">
+      <%_.each(dataActivity, function(element, index, list) { %>
+        <div>
+          <a href="<%= element.name %>"></a>
+          <p><%= element.type %></p>
+        </div>
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+      </aside>
+      <div class="right">
+        <nav>
+          <a class="repoNav" href="#">Repositories</a>
+          <a class="publicActsNav" href="#">Public Activity</a>
+        </nav>
+        <section class="repos">
+        </section>
+        <section class="publicActs">
+        </section>
+
+      </div>
+
+    </div>
+
+
     <script type = "text/javascript" src = "node_modules/underscore/underscore.js"></script>
     <script src = "node_modules/jquery/dist/jquery.js"></script>
     <script src = "javaShit/script.js"></script>
     <script src = "javaShit/data.js"></script>
-    <script src = "javaShit/template.js"></script>
-    <script type = "text/css" src = "styleSheets/styles.css"></script>
-  </head>
-  <body>
-    
   </body>
 </html>
