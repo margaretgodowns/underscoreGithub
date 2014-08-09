@@ -16,6 +16,7 @@ $(document).ready(function(){
       });
       $(".publicActsNav").click(function(event){
         event.preventDefault();
+        $(".repos").addClass("hide");
       });
     },
     render: function(template, data, $target){
@@ -29,7 +30,7 @@ $(document).ready(function(){
       gitProfile.render($("#repoTmplt").html(), dataRepo, $target);
     },
     renderActivity: function($target){
-      gitProfile.render($("#activityTmple").html(), dataActivity, $target);
+      gitProfile.render($("#activityTmplt").html(), dataActivity, $target);
     },
 
   };
