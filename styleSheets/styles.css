@@ -15,14 +15,19 @@ h2 {
   font-size: 1.3em;
   margin: 0; }
 
+.social p {
+  font-size: 2em; }
+
 p {
   font-family: helvetica;
   font-size: 0.95em;
   padding: 1.8px;
-  margin: 0; }
+  margin: 0;
+  display: inline-block; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #469ED8; }
 
 .container {
   width: 100%;
