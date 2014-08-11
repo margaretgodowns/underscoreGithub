@@ -4,7 +4,6 @@
 
 .container {
   width: 100%;
-  border: 2px solid red;
   margin: 30px; }
   .container .octicon {
     color: #bbbbbb;
@@ -15,8 +14,7 @@
   .container aside {
     display: inline-block;
     width: 25%;
-    vertical-align: top;
-    border: 2px solid red; }
+    vertical-align: top; }
     .container aside .social p {
       display: inline-block;
       font-size: 2em; }
@@ -26,12 +24,15 @@
     .container aside .organizations {
       font-size: 1em;
       font-weight: bold; }
+    .container aside img {
+      height: 250px;
+      width: 250px;
+      border-radius: 5%; }
   .container .right {
     vertical-align: top;
     display: inline-block;
     width: 70%;
-    text-align: left;
-    border: 2px solid red; }
+    text-align: left; }
     .container .right nav a {
       font-family: helvetica;
       color: gray;
@@ -44,11 +45,12 @@
       font-size: 0.7em;
       color: gray;
       margin-left: 20px; }
-
-img {
-  height: 250px;
-  width: 250px;
-  border-radius: 5%; }
+  .container #profPic {
+    width: 50px;
+    height: 50px; }
+  .container #thumbnail {
+    width: 25px;
+    height: 25px; }
 
 h1 {
   font-family: helvetica;

@@ -4,7 +4,6 @@
 }
 .container {
   width: 100%;
-  border: 2px solid red;
   margin: 30px;
   .octicon{
     color: #bbbbbb;
@@ -18,7 +17,7 @@
     display: inline-block;
     width: 25%;
     vertical-align: top;
-    border: 2px solid red;
+    // border: 2px solid red;
     .social p {
       display: inline-block;
       font-size: 2em;
@@ -31,13 +30,17 @@
       font-size: 1em;
       font-weight: bold;
     }
+    img {
+      height: 250px;
+      width: 250px;
+      border-radius: 5%; }
   }
   .right {
     vertical-align: top;
     display: inline-block;
     width: 70%;
     text-align: left;
-    border: 2px solid red;
+    // border: 2px solid red;
     nav a{
       font-family: helvetica;
       color: gray;
@@ -49,7 +52,6 @@
       font-size: 1.5em;
       }
     }
-
     p{
       padding: 5px;
       font-size: .7em;
@@ -57,13 +59,15 @@
       margin-left:20px;
       }
     }
+    #profPic{
+      width: 50px;
+      height: 50px;
+    }
+    #thumbnail{
+      width: 25px;
+      height: 25px;
+    }
 }
-
-
-img {
-  height: 250px;
-  width: 250px;
-  border-radius: 5%; }
 
 h1 {
   font-family: helvetica;

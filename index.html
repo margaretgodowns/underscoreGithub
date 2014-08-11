@@ -36,10 +36,31 @@
 
     <script type=template/html id="activityTmplt">
       <%_.each(dataActivity, function(element, index, list) { %>
-        <div>
-          <a href="<%= element.name %>"></a>
-          <p><%= element.type %></p>
-        </div>
+        <% if (element.type === "PushEvent"){ %>
+            <div>
+              <span class="mega-octicon octicon-git-commit"></span>
+              <p><a href="<%=element.actor.url%>"><%=element.actor.login%></a> pushed to <a   href="">master</a> at <a href="<%=element.repo.url%>"><%=element.repo.name%></a> </p>
+              </div>
+            <br>
+              <a href="element.actor.url"><img id="profPic" src="<%=element.actor.avatar_url%>" alt=""></a>
+              <img id="thumbnail" src="<%=element.actor.avatar_url%>" alt="">
+              <a href=""> <%=element.payload.head %></a>
+              <p><%=element.payload.commits.message%></p>
+              <hr>
+        <% } else { %>
+        <% if (element.payload.ref_type === "repository"){ %>
+              <span class="octicon octicon-repo"></span>
+              <div>
+              <p><a href=""></a> created repository</p> <a href=""><%=element.repo.name%></a>
+              </div>
+        <% }else{ %>
+              <span class="octicon octicon-git-branch"></span>
+              <div>
+              <p><a href=""></a> created branch <a class="branch" href=""><span class="octicon octicon-git-branch"> <%=element.payload.master_branch%></a> at <a href=""><%=element.repo.name%></a></p>
+              </div>
+              <% } %>
+          <hr>
+        <% } %>
     <%  }); %>
     </script>
 
@@ -50,8 +71,8 @@
       </aside>
       <div class="right">
         <nav>
-          <a class="repoNav" href="#">Repositories</a>
-          <a class="publicActsNav" href="#">Public Activity</a>
+          <a class="repoNav show" id="repoTab" href="#">Repositories</a>
+          <a class="publicActsNav" id="paTab" href="#">Public Activity</a>
         </nav>
         <section class="repos">
         </section>

@@ -10,17 +10,21 @@ $(document).ready(function(){
       gitProfile.renderRepo($(".repos"));
       gitProfile.renderActivity($(".publicActs"));
     },
-    initEvents: function(){
-      $(".reposNav").click(function(event){
+    initEvents: function(event){
+      $("#repoTab").click(function(event){
         event.preventDefault();
         $(".publicActs").addClass("hide");
         $(".repos").removeClass("hide");
+        $(this).addClass("show");
+        $(this).siblings().removeClass("show");
 
       });
-      $(".publicActsNav").click(function(event){
+      $("#paTab").click(function(event){
         event.preventDefault();
-        $(".repos").addClass("hide");
         $(".publicActs").removeClass("hide");
+        $(".repos").addClass("hide");
+        $(this).siblings().removeClass("show");
+        $(this).addClass("show");
       });
     },
     render: function(template, data, $target){
