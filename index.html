@@ -3,6 +3,7 @@
   <head>
     <title>Underscore Project</title>
     <link rel="stylesheet" href="styleSheets/styles.css">
+    <link rel="stylesheet" href="octicons/octicons.css">
 
     <script type=template/html id="profileTmplt">
       <%_.each(dataProfile, function(element, index, list) { %>
@@ -10,23 +11,26 @@
       <h1><%= element.name %></h1>
       <h2><%= element.login %></h2>
       <hr>
-      <p><%= element.location %></p>
-      <a href="#"><p><%= element.email%></p></a>
-      <p><%= element.created_at %></p>
+      <p><span class="octicon octicon-location"></span><%= element.location %></p>
+      <a href="#"><p><span class="octicon octicon-mail"></span><%= element.email%></p></a>
+      <p><span class="octicon octicon-clock"></span><%= element.created_at %></p>
       <hr>
-      <div>
-      <p><%= element.followers %></p>
-      <p><%= element.following %></p>
+      <div class="social">
+      <p class="follow"><%= element.followers %><br><span class="followText">Followers</span></p>
+      <p class="follow"><%= element.following %><br><span class="followText">Following</span></p>
       </div>
       <hr>
-      <h2><%= element.organizations_url %></h2>
+      <p class="organizations">Organizations</p>
+      <a href="<%= element.organizations_url %>"><img id="orgImg" src="images/organizationsThumb.png"></a>
     <% }); %>
     </script>
 
     <script type=template/html id="repoTmplt">
       <%_.each(dataRepo, function(element, index, list) { %>
-        <a href="<%= element.html_url%>"><h1><%= element.name %></h1></a>
-        <p><%= element.updated_at %></p>
+        <a href="<%= element.html_url%>"><h1><span class="mega-octicon octicon-repo"></span><%= element.name %></h1></a>
+        <p>Last updated <%=element.updated_at%></p>
+        <p class="repoStatus">Javascript<span class="octicon octicon-star"></span>0<span class="octicon octicon-repo-forked"></span>0</p>
+        <hr>
     <% }); %>
     </script>
 
@@ -51,7 +55,7 @@
         </nav>
         <section class="repos">
         </section>
-        <section class="publicActs, hide">
+        <section class="publicActs hide">
         </section>
 
       </div>

@@ -13,10 +13,14 @@ $(document).ready(function(){
     initEvents: function(){
       $(".reposNav").click(function(event){
         event.preventDefault();
+        $(".publicActs").addClass("hide");
+        $(".repos").removeClass("hide");
+
       });
       $(".publicActsNav").click(function(event){
         event.preventDefault();
         $(".repos").addClass("hide");
+        $(".publicActs").removeClass("hide");
       });
     },
     render: function(template, data, $target){
